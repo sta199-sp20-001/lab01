@@ -1,0 +1,89 @@
+---
+title: "Lab 01 - Hello R!"
+subtitle: "Due: Tue, Jan 21 at 11:59pm"
+author: ""
+date: ""
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Load Packages
+
+```{r load-packages, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(datasauRus)
+```
+
+# Exercise 1
+
+(Type your answer to Exercise 1 here. This exercise does not require any R code). 
+**Remember that in the lab we are telling you when to stage, commit, and push**!
+
+You may knit this document to see what the template looks like. 
+**When turning this document in on Gradescope, remember to knit to PDF** 
+and turn in that PDF document.
+
+# Exercise 2
+
+(The answers for this Exercise are given for you below, but you should clean up 
+some of the narrative so that it only includes what you want to turn in.)
+
+First, let's plot the data in the dino dataset 
+(we covered `ggplot2` in class on Thursday):
+
+```{r plot-dino}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) + 
+  geom_point()
+```
+
+Next calculate the correlation between `x` and `y` in this dataset 
+(an explanation for this code is given in the lab document. We will cover data 
+wrangling in more detail in class next week).
+
+```{r cor-dino}
+dino_data %>%
+  summarize(r = cor(x, y))
+```
+
+# Exercise 3
+
+(Add code and narrative as needed. Note that the `R` chunks are labeled with 
+`plot-star` and `cor-star` to provide spaces to place the code for plotting 
+and calculating the correlation coefficient. To finish, clean up the narrative 
+by removing these instructions)
+
+Your narrative should go here.
+
+```{r plot-star}
+# Your code should go here! This is a comment, which should be deleted.
+```
+
+Some more narrative can go here.
+
+```{r cor-star}
+# Calculate the correlation here
+```
+
+Conclude with some more narrative, if needed.
+
+# Exercise 4
+
+(Add code and narrative as needed. Note that two `R` chunks are given but they 
+are not labeled. Use the convention from Exercise 3 to name them appropriately.)
+
+```{r}
+# This is an unlabeled chunk
+```
+
+```{r}
+# Here is another unlabeled chunk
+```
+
+# Exercise 5
+
+(Add code and narrative as needed. Insert code chunks using the 
+"insert chunk" button (a green C with a plus) and insert an `R` chunk.)
